@@ -6,7 +6,7 @@ const RootLayout = () => {
 
   return (
     <>
-      <div className="p-2 flex gap-2 items-center justify-between">
+      <div className="p-2 flex gap-2 items-center justify-between mx-2 px-2">
         <div className="flex gap-2">
           <Link to="/" className="[&.active]:font-bold">
             Home
