@@ -1,9 +1,9 @@
-import "./App.css";
+
 
 function App() {
   return (
     <>
-      <div>Earthquake system</div>
+      <div className="flex border-2">Earthquake system</div>
     </>
   );
 }
