@@ -7,9 +7,8 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div className="px-2 mx-2">
+    <div>
       <p className="text-lg font-light">Realtime Earthquakes</p>
-      <p className="text-sm font-light">Sort by:</p>
       <EarthquakeLayout />
     </div>
   );

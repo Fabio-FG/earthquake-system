@@ -20,7 +20,10 @@ export default function EarthquakeList() {
   }
 
   return (
-    <div className="bg-blue-300">
+    <div className="">
+      <div>
+        <p className="text-sm font-light">Sort by:</p>
+      </div>
       {earthquakes &&
         earthquakes.features.map((quake) => {
           return (
