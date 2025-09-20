@@ -1,9 +1,23 @@
 import { create } from "zustand";
 
-export const useMapStore = create<{
-  showMap: boolean;
-  toggleMap: () => void;
-}>((set) => ({
-  showMap: false,
-  toggleMap: () => set((s) => ({ showMap: !s.showMap })),
+type InitialState = {
+  mapView: boolean;
+  listView: boolean;
+};
+
+type StoreActions = {
+  toggleMapView: () => void;
+  toggleListView: () => void;
+};
+
+const initialState: InitialState = {
+  mapView: false,
+  listView: true,
+};
+
+export const useDisplayView = create<InitialState & StoreActions>((set) => ({
+  ...initialState,
+  
+  toggleMapView: () => set((state) => ({ mapView: !state.mapView })),
+  toggleListView: () => set((state) => ({ listView: !state.listView })),
 }));
