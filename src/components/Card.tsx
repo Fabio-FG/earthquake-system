@@ -1,6 +1,7 @@
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 const Card = ({ children, className = "", ...props }: CardProps) => {

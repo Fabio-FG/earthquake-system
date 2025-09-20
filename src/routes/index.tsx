@@ -8,7 +8,6 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <div>
-      <p className="text-lg font-light">Realtime Earthquakes</p>
       <EarthquakeLayout />
     </div>
   );
