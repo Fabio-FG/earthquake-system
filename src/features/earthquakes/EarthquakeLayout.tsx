@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useMapStore } from "../../stores/ui";
+import { useDisplayView } from "../../stores/ui";
 import EarthquakeList from "./EarthquakeList";
 import EarthquakeMap from "./EarthquakeMap";
 
 export default function EarthquakeLayout() {
   const [isMobile, setIsMobile] = useState(false);
-  const showMap = useMapStore((s) => s.showMap);
+  const { listView, mapView } = useDisplayView();
 
   //handle screen size
   useEffect(() => {
@@ -18,15 +18,20 @@ export default function EarthquakeLayout() {
   if (!isMobile) {
     return (
       <div className="flex flex-row w-full h-screen">
-        <div className="w-1/2 h-full overflow-y-auto">
+        <div className="flex-1 h-full overflow-y-auto">
           <EarthquakeList />
         </div>
-        <div className="w-1/2 h-full mx-4">
+        <div className="flex-2 h-full mx-4">
           <EarthquakeMap />
         </div>
       </div>
     );
   }
 
-  return <div>{showMap ? <EarthquakeList /> : <EarthquakeMap />}</div>;
+  return (
+    <div>
+      {listView && <EarthquakeList />}
+      {mapView && <EarthquakeMap />}
+    </div>
+  );
 }
