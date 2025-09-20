@@ -3,9 +3,11 @@ import useEarthquakes from "./hooks/useEarthquakes";
 import { WiEarthquake, WiTime1 } from "react-icons/wi";
 import { formatTime } from "../../helpers/formatTime";
 import { Card } from "../../components/Card";
+import { useEarthquakeStore } from "./stores/earthquake.store";
 
 export default function EarthquakeList() {
   const { earthquakes, error, isLoading } = useEarthquakes();
+  const { setSelectedEarthquake } = useEarthquakeStore();
 
   if (error) {
     return <ErrorComponent error={"Error while fetching"} />;
@@ -21,14 +23,17 @@ export default function EarthquakeList() {
 
   return (
     <div className="">
-      <div>
+      <div className="ml-2">
         <p className="text-sm font-light">Sort by:</p>
       </div>
       {earthquakes &&
         earthquakes.features.map((quake) => {
           return (
-            <Card className="flex gap-4 items-start mx-2 my-2">
-              <div className="flex flex-col items-center align-middle ">
+            <Card
+              className="flex gap-4 items-start mx-2 my-2"
+              onClick={() => setSelectedEarthquake(quake)}
+            >
+              <div className="flex flex-col items-center align-middle">
                 <WiEarthquake color="red" />
                 <p className="text-red-400">{quake.properties.mag}</p>
               </div>
