@@ -5,7 +5,7 @@ import MobileHeader from "../components/MobileHeader";
 const RootLayout = () => {
   return (
     <>
-      <div className="bg-[#160f2e] text-white py-4">
+      <div className="bg-main text-white py-4 h-20 sticky w-full z-1000">
         <DesktopHeader />
         <MobileHeader />
       </div>

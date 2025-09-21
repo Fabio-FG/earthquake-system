@@ -21,7 +21,7 @@ export default function EarthquakeLayout() {
         <div className="flex-1 h-full overflow-y-auto">
           <EarthquakeList />
         </div>
-        <div className="flex-2 h-full mx-4">
+        <div className="flex-2 h-full">
           <EarthquakeMap />
         </div>
       </div>

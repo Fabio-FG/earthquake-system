@@ -17,7 +17,8 @@ const initialState: InitialState = {
 
 export const useDisplayView = create<InitialState & StoreActions>((set) => ({
   ...initialState,
-  
-  toggleMapView: () => set((state) => ({ mapView: !state.mapView })),
-  toggleListView: () => set((state) => ({ listView: !state.listView })),
+  toggleMapView: () =>
+    set((state) => ({ mapView: !state.mapView, listView: !state.listView })),
+  toggleListView: () =>
+    set((state) => ({ listView: !state.listView, mapView: !state.mapView })),
 }));
