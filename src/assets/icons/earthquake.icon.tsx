@@ -10,7 +10,7 @@ export default function createEarthquakeIcon(
   const getIconClasses = (mag: number, selected: boolean) => {
     if (selected) {
       return {
-        containerClass: "w-5 h-5 bg-blue-500 border-transparent",
+        containerClass: "w-7 h-7 bg-main border-teal-500 z-30 border-2",
         iconClass: "text-white text-2xl",
       };
     }
