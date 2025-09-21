@@ -34,16 +34,6 @@ export interface EarthquakeFeature {
   id: string;
 }
 
-export type EarthquakeParams = {
-  starttime?: string;
-  endtime?: string;
-  minmagnitude?: number;
-  maxmagnitude?: number;
-  limit?: number;
-  offset?: number;
-  format?: "geojson" | "xml" | "text" | "kml" | "quakeml";
-};
-
 export interface EarthquakeResponse {
   type: "FeatureCollection";
   metadata: {

@@ -10,6 +10,8 @@ const earthquakeSearchSchema = z.object({
   orderby: z
     .enum(["time", "time-asc", "magnitude", "magnitude-asc"])
     .optional(),
+  format: z.enum(["geojson", "xml", "text", "kml", "quakeml"]).optional(),
+  includeallmagnitudes: z.boolean().optional(),
 });
 
 export type earthquakeSearchSchema = z.infer<typeof earthquakeSearchSchema>;

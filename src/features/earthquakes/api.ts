@@ -1,8 +1,9 @@
 import { api } from "../../lib/axios";
-import type { EarthquakeParams, EarthquakeResponse } from "./types";
+import type { earthquakeSearchSchema } from "./schemas/earthquake.schemas";
+import type { EarthquakeResponse } from "./types";
 
 export async function getEarthquakes(
-  params: EarthquakeParams
+  params: earthquakeSearchSchema
 ): Promise<EarthquakeResponse> {
   const result = await api.get("1/query", {
     params: {
