@@ -8,17 +8,15 @@ export default function DesktopHeader() {
   const { toggleListView, toggleMapView } = useDisplayView();
   return (
     <div className="hidden md:flex gap-4 items-center justify-between px-4 mb-4 ">
-      <div className="flex flex-row items-center">
+      <Link to="/" className="flex flex-row items-center">
         <div className="border-2 rounded-full border-teal-500 p-1">
           <WiEarthquake size={30} />
         </div>
         <p className="text-lg font-medium  p-2 rounded-2xl ">
           Realtime
-          <span className="bg-teal-500 p-1 rounded-2xl text-black">
-            Quakes
-          </span>
+          <span className="bg-teal-500 p-1 rounded-2xl text-black">Quakes</span>
         </p>
-      </div>
+      </Link>
 
       <div className="flex flex-row gap-10 flex-wrap flex-1 justify-between items-center">
         <nav className="gap-10 flex ml-6">

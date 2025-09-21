@@ -4,9 +4,8 @@ import { useDisplayView } from "../stores/ui";
 import { WiEarthquake } from "react-icons/wi";
 
 export default function MobileHeader() {
-  const { toggleListView, toggleMapView, mapView } = useDisplayView();
+  const { toggleListView, toggleMapView } = useDisplayView();
 
-  console.log({ mapView });
   return (
     <div className="md:hidden">
       <div className="flex items-center px-2">
