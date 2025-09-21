@@ -7,7 +7,7 @@ interface CardProps {
 const Card = ({ children, className = "", ...props }: CardProps) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-md border border-subtle-text p-4 ${className}`}
+      className={`bg-white rounded-lg shadow-md border border-subtle-text ${className}`}
       {...props}
     >
       {children}
@@ -15,4 +15,4 @@ const Card = ({ children, className = "", ...props }: CardProps) => {
   );
 };
 
-export { Card }
+export { Card };
