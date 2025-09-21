@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { getEarthquakes } from "../api";
-import type { EarthquakeParams } from "../types";
+import type { earthquakeSearchSchema } from "../schemas/earthquake.schemas";
 
-export default function useEarthquakes(params: EarthquakeParams) {
+export default function useEarthquakes(params: earthquakeSearchSchema) {
   const {
     data: earthquakes,
     isLoading,
