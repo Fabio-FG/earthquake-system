@@ -2,23 +2,35 @@ import { Link } from "@tanstack/react-router";
 import { CiViewList } from "react-icons/ci";
 import { FaGlobeAsia } from "react-icons/fa";
 import { useDisplayView } from "../stores/ui";
+import { WiEarthquake } from "react-icons/wi";
 
 export default function DesktopHeader() {
   const { toggleListView, toggleMapView } = useDisplayView();
   return (
-    <div className="hidden md:flex p-2 gap-4 items-center justify-between px-4 mb-4 ">
-      <p className="text-lg font-medium">Realtime Earthquakes</p>
+    <div className="hidden md:flex gap-4 items-center justify-between px-4 mb-4 ">
+      <div className="flex flex-row items-center">
+        <div className="border-2 rounded-full border-teal-500 p-1">
+          <WiEarthquake size={30} />
+        </div>
+        <p className="text-lg font-medium  p-2 rounded-2xl ">
+          Realtime
+          <span className="bg-teal-500 p-1 rounded-2xl text-black">
+            Quakes
+          </span>
+        </p>
+      </div>
+
       <div className="flex flex-row gap-10 flex-wrap flex-1 justify-between items-center">
         <nav className="gap-10 flex ml-6">
           <Link
             to="/"
-            className="[&.active]:font-bold hover:text-gray-200 transition-colors font-extralight"
+            className="[&.active]:font-bold hover:text-teal-500 transition-colors font-extralight"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="[&.active]:font-bold hover:text-gray-200 transition-colors font-extralight"
+            className="[&.active]:font-bold hover:text-teal-500 transition-colors font-extralight"
           >
             About
           </Link>
@@ -26,14 +38,14 @@ export default function DesktopHeader() {
         <div className="gap-6 flex mr-4">
           <button
             onClick={toggleMapView}
-            className="hover:text-gray-200 transition-colors p-1"
+            className="hover:text-teal-500 transition-colors p-1"
             aria-label="Toggle map view"
           >
             <FaGlobeAsia size={20} />
           </button>
           <button
             onClick={toggleListView}
-            className="hover:text-gray-200 transition-colors p-1"
+            className="hover:text-teal-500 transition-colors p-1"
             aria-label="Toggle list view"
           >
             <CiViewList size={20} />
