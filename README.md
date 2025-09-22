@@ -1,6 +1,6 @@
 # Realtime Quake
 
-An app to check realtime earthquake that are happening all over the world!
+An app to check realtime earthquakes that are happening all over the world!
 
 ### Pre-requirements
 
