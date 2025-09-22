@@ -19,20 +19,7 @@ export default function DesktopHeader() {
       </Link>
 
       <div className="flex flex-row gap-10 flex-wrap flex-1 justify-between items-center">
-        <nav className="gap-10 flex ml-6">
-          <Link
-            to="/"
-            className="[&.active]:font-bold hover:text-teal-500 transition-colors font-extralight"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="[&.active]:font-bold hover:text-teal-500 transition-colors font-extralight"
-          >
-            About
-          </Link>
-        </nav>
+        <nav className="gap-10 flex ml-6"></nav>
         <div className="gap-6 flex mr-4">
           <button
             onClick={toggleMapView}
