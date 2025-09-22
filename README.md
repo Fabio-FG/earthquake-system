@@ -83,8 +83,10 @@ Realtime Quake App
 - Responsive first.
 
 **color palette**
-- **main colour**: #160f2e;
-- **main text colour**: #00bba7
+- **main colour**: ![#160f2e](https://placehold.co/15x15/160f2e/160f2e.png) `#160f2e`
+- ![#160f2e](https://placehold.co/15x15/160f2e/160f2e.png) `#160f2e`
+- **main text colour**: ![#00bba7](https://placehold.co/15x15/00bba7/00bba7.png) `#00bba7`
+
 
 
 ## Challenges
