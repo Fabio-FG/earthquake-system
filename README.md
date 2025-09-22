@@ -13,7 +13,6 @@ An app to check realtime earthquake that are happening all over the world!
 # Clone the repo
 git clone https://github.com/Fabio-FG/earthquake-system.git
 
-
 # Install dependencies
 npm install
 
