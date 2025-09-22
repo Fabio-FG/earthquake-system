@@ -19,6 +19,8 @@ import type { EarthquakeFeature } from "./types";
 const { BaseLayer } = LayersControl;
 
 import { ImSpinner3 } from "react-icons/im";
+import { QuakeRegionMenu } from "./EarthquakeRegionMenu";
+import EarthquakeMagDisplay from "./EarthquakeMagDisplay";
 
 function MapController() {
   const { selectedEarthquake } = useEarthquakeStore();
@@ -28,7 +30,7 @@ function MapController() {
     if (selectedEarthquake) {
       const [lon, lat] = selectedEarthquake.geometry.coordinates;
 
-      map.setView([lat, lon], 10);
+      map.setView([lat, lon], 12);
     }
   }, [selectedEarthquake, map]);
 
@@ -139,6 +141,8 @@ export default function EarthquakeMap() {
 
       {renderSystemMessage()}
       <ZoomControl position="topright" />
+      <QuakeRegionMenu />
+      <EarthquakeMagDisplay />
       <MapController />
       {earthquakes &&
         earthquakes.features.map((quake) => {
@@ -157,16 +161,29 @@ export default function EarthquakeMap() {
                   click: () => handleQuake(quake),
                 }}
               >
-                <Popup className={cn("m-0 flex")}>
-                  <div className="flex flex-col gap-0 m-0">
-                    <p className="text-yellow">
-                      Location: {quake.properties.place}
+                <Popup
+                  className={cn("custom-popup leaflet-popup-content")}
+                  closeButton={false}
+                  autoPan={true}
+                  keepInView={true}
+                >
+                  <div className="flex flex-col gap-0 m-0 flex-wrap">
+                    <p>
+                      <span className="text-teal-500">Location:</span>{" "}
+                      {quake.properties.place}
                     </p>
-                    <p className="mx-0">Magnitude: {quake.properties.mag}</p>
                     <p className="mx-0">
-                      Time: {formatTime(quake.properties.time)}
+                      <span className="text-teal-500">Magnitude:</span>{" "}
+                      {quake.properties.mag}
                     </p>
-                    <p>Depth: {`${quake.geometry.coordinates[2]} Km`}</p>
+                    <p className="mx-0">
+                      <span className="text-teal-500">Time:</span>{" "}
+                      {formatTime(quake.properties.time)}
+                    </p>
+                    <p>
+                      <span className="text-teal-500">Depth:</span>{" "}
+                      {`${quake.geometry.coordinates[2]} Km`}
+                    </p>
                   </div>
                 </Popup>
               </Marker>
