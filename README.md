@@ -1,69 +1,99 @@
-# React + TypeScript + Vite
+# Realtime Quake
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An app to check realtime earthquake that are happening all over the world!
 
-Currently, two official plugins are available:
+### Pre-requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v20 ou superior)
+- npm / yarn / pnpm
 
-## Expanding the ESLint configuration
+### How to install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Clone the repo
+git clone https://github.com/Fabio-FG/earthquake-system.git
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Install dependencies
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Config the .env file (check the .env.example)
+cp .env.example .env
+
+#run the project
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📸 Screenshots
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Realtime Quake App
+![App Screenshot](screenshots/realtimequake-print1.png)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<details>
+<summary>More screenshots</summary>
+
+![Feature 1](screenshots/realtimequake-print1.png)
+![Desktop View](screenshots/realtimequake-print2.png)
+![Desktop View](screenshots/realtimequake-print3.png)
+![Mobile View](screenshots/realtimequake-print4.png)
+![Mobile View](screenshots/realtimequake-print5.png)
+
+</details>
+
+## Features
+
+- Earthquake listing: Check the latest registred earthquakes all over the world
+- Earthquake sort: Sort the earthquake data by period of time.
+- Earthquake order: Order the earthquake data by magnitude / by oldest or most recent earthquake.
+- Earthquake Magnitude Scale: Check the illustrated magnitude scale.
+- Map layers: Choose different map layers.
+- Map regions: Focus on specific regions.
+
+
+## Tech stack
+
+### Frontend
+- **React**
+- **TypeScript**
+- **Vite**
+
+### Styling
+- **Tailwind CSS** 
+- **React-icons**
+
+### Libraries
+- **Tanstack Query** 
+- **Tanstack Router** 
+- **Zustand**
+- **Zod**
+- **Axios**
+- **Leaflet** / **Leaflet-React**
+
+
+## Demo
+
+🔗 **[Demo](link-para-demo)**
+
+
+## Challenges
+- Handling big data sets;
+- Component renderization hierarchy;
+- Map constraints (zoom causing header to disappear, out of bounds handling)
+
+
+## Backlog
+- [ ] Add unit tests (e.g: Jest)
+- [ ] Add Components such as Pagination to the Earthquake list and Drawer to improve UX when selecting a Marker.
+- [ ] Refactor the renderization hierarchy
+
+
+### Documentation and sources
+
+- https://www.usgs.gov/programs/earthquake-hazards/earthquakes
+- https://earthquake.usgs.gov/fdsnws/event/1/
+- https://flowbite.com/docs/getting-started/introduction/
+- https://www.mapping101.com/skills/leaflet-zoompan
+- https://tailwindcss.com/
+- https://openmaptiles.org/styles/
+
