@@ -89,7 +89,7 @@ export default function EarthquakeList() {
           return (
             <Card
               className={cn(
-                "flex gap-4 items-center py-2 px-2 mx-2 my-2 justify-center",
+                "flex gap-4 items-center py-2 px-2 mx-2 my-2 justify-center cursor-pointer",
                 isSelected && "border-teal-500 bg-main text-white"
               )}
               key={quake.id}

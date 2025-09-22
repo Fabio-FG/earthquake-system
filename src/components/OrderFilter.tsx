@@ -25,7 +25,7 @@ export default function OrderFilter({
           return (
             <p
               className={cn(
-                "text-sm text-teal-500 font-light border-2 shadow border-teal-500 p-2 rounded-2xl",
+                "text-sm text-teal-500 font-light border-2 shadow border-teal-500 p-2 rounded-2xl cursor-pointer",
                 isSelected && "bg-teal-500 text-white"
               )}
               key={idx}
