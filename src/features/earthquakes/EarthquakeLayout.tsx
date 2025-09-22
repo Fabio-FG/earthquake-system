@@ -17,11 +17,11 @@ export default function EarthquakeLayout() {
 
   if (!isMobile) {
     return (
-      <div className="flex flex-row w-full h-screen">
-        <div className="flex-1 h-full overflow-y-auto">
-          <EarthquakeList />
+      <div className="flex flex-row w-full h-screen border-2 border-white bg-red-500">
+        <div className="h-full overflow-y-auto z-9999 relative bg-white">
+          {listView && <EarthquakeList />}
         </div>
-        <div className="flex-2 h-full">
+        <div className="flex h-auto w-full z-0 fixed">
           <EarthquakeMap />
         </div>
       </div>
