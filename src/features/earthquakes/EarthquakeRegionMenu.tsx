@@ -15,7 +15,7 @@ export function QuakeRegionMenu() {
   };
 
   return (
-    <div className="absolute top-35 right-3 bg-white p-2 rounded-lg shadow-md z-999 cursor-pointer">
+    <div className="relative ml-auto top-40 right-2 bg-white p-2 rounded-lg shadow-md z-999 cursor-pointer">
       {!showList && (
         <FaGlobeAfrica
           size={20}

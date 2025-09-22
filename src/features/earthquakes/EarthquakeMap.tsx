@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { MdOutlineError } from "react-icons/md";
 import {
   LayersControl,
   MapContainer,
@@ -18,9 +17,9 @@ import { useEarthquakeStore } from "./stores/earthquake.store";
 import type { EarthquakeFeature } from "./types";
 const { BaseLayer } = LayersControl;
 
-import { ImSpinner3 } from "react-icons/im";
-import { QuakeRegionMenu } from "./EarthquakeRegionMenu";
 import EarthquakeMagDisplay from "./EarthquakeMagDisplay";
+import { QuakeRegionMenu } from "./EarthquakeRegionMenu";
+import SystemMessage from "../../components/SystemError";
 
 function MapController() {
   const { selectedEarthquake } = useEarthquakeStore();
@@ -51,35 +50,6 @@ export default function EarthquakeMap() {
   }
 
   const [center] = useState<[number, number]>([29.636, 129.59]);
-
-  function renderSystemMessage() {
-    if (isLoading) {
-      return (
-        <div className=" flex h-auto z-2000 bg-main fixed ml-auto self-start px-2 py-4 border-black-500 items-center gap-2 text-white bottom-5 left-auto right-5">
-          <ImSpinner3 size={20} />
-          <p className="text-md">Loading data...</p>
-        </div>
-      );
-    }
-
-    if (isFetching) {
-      return (
-        <div className=" flex h-auto z-2000 bg-main fixed ml-auto self-start px-2 py-4 border-black-500 items-center gap-2 text-white bottom-5 left-auto right-5">
-          <ImSpinner3 size={20} />
-          <p className="text-md">Updating data...</p>
-        </div>
-      );
-    }
-
-    if (error) {
-      return (
-        <div className=" flex h-auto z-2000 bg-main fixed ml-auto self-start px-2 py-4 border-black-500 items-center gap-2 text-white bottom-5 left-auto right-5">
-          <MdOutlineError />
-          <p className="text-md">Error while fetching data. Try later.</p>
-        </div>
-      );
-    }
-  }
 
   return (
     <MapContainer
@@ -139,9 +109,15 @@ export default function EarthquakeMap() {
         </BaseLayer>
       </LayersControl>
 
-      {renderSystemMessage()}
-      <ZoomControl position="topright" />
-      <QuakeRegionMenu />
+      <SystemMessage
+        isFetching={isFetching}
+        isLoading={isLoading}
+        error={error}
+      />
+      <div className="flex flex-col h-auto flex-wrap">
+        <ZoomControl position="topright" />
+        <QuakeRegionMenu />
+      </div>
       <EarthquakeMagDisplay />
       <MapController />
       {earthquakes &&

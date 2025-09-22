@@ -1,19 +1,19 @@
-import { ErrorComponent } from "@tanstack/react-router";
 import { WiEarthquake, WiTime1 } from "react-icons/wi";
 import { Card } from "../../components/Card";
 
+import { useEffect, useState } from "react";
+import OrderFilter, { type OrderString } from "../../components/OrderFilter";
 import Range, { type RangeLevel } from "../../components/Range";
 import SortFilter from "../../components/SortFilter";
+import SystemMessage from "../../components/SystemError";
 import { formatLocation } from "../../helpers/formatLocation.helper";
 import { formatTime } from "../../helpers/formatTime.helper";
+import { useDisplayView } from "../../stores/ui";
 import { cn } from "../../utils/cn";
 import { useEarthquakeParams } from "./hooks/useEarthquakeParams";
 import useEarthquakes from "./hooks/useEarthquakes";
 import { useEarthquakeStore } from "./stores/earthquake.store";
 import type { EarthquakeFeature } from "./types";
-import OrderFilter, { type OrderString } from "../../components/OrderFilter";
-import { useDisplayView } from "../../stores/ui";
-import { useEffect, useState } from "react";
 
 const dateSortOptions = [
   { label: "Last day", value: 1 },
@@ -40,7 +40,7 @@ export default function EarthquakeList() {
   const [isMobile, setIsMobile] = useState(false);
   const { toggleMapView } = useDisplayView();
 
-  const { earthquakes, error, isLoading } = useEarthquakes(params);
+  const { earthquakes, error, isLoading, isFetching } = useEarthquakes(params);
 
   const { setSelectedEarthquake, selectedEarthquake } = useEarthquakeStore();
 
@@ -63,21 +63,14 @@ export default function EarthquakeList() {
     setMinMagnitude(index.value);
   }
 
-  if (error) {
-    return <ErrorComponent error={"Error while fetching"} />;
-  }
-
-  if (isLoading && !earthquakes) {
-    return <p>Loading...</p>;
-  }
-
-  if (!earthquakes) {
-    return <p>no earthquake data</p>;
-  }
-
   return (
     <div className="">
       <div className="md:ml-2">
+        <SystemMessage
+          isFetching={isFetching}
+          isLoading={isLoading}
+          error={error}
+        />
         <SortFilter sortOptions={dateSortOptions} onChange={setDays} />
         <div className="mt-6 md:mt-4 justify-center flex flex-col ml-2 mr-2 mb-4 flex-wrap h-auto">
           <Range
