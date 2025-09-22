@@ -11,3 +11,20 @@ body {
   --color-subtle-text: #9da0aa;
   --color-main: #160f2e;
 }
+
+@layer components {
+  .range-thumb-style {
+    @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
+    /* `appearance-none` é crucial para remover os estilos padrão do navegador. */
+  }
+
+  /* Estilos específicos do Chrome, Safari, Edge */
+  .range-thumb-style::-webkit-slider-thumb {
+    @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
+  }
+
+  /* Estilos específicos do Firefox */
+  .range-thumb-style::-moz-range-thumb {
+    @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
+  }
+}
