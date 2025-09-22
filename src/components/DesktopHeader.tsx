@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { CiViewList } from "react-icons/ci";
-import { FaGithub, FaGlobeAsia } from "react-icons/fa";
-import { useDisplayView } from "../stores/ui";
+import { FaGithub } from "react-icons/fa";
 import { WiEarthquake } from "react-icons/wi";
+import { useDisplayView } from "../stores/ui";
 
 export default function DesktopHeader() {
   const { toggleListView, toggleMapView } = useDisplayView();
