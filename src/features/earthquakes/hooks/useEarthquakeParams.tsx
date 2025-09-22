@@ -6,7 +6,6 @@ export function useEarthquakeParams(defaultDays = 1) {
   const search = useSearch({ from: "/" });
   const navigate = useNavigate();
 
-  //Memoize to avoid infinite loops while getting date range.
   const defaults = useMemo(
     () => ({
       ...getDateRange(defaultDays),
@@ -62,17 +61,10 @@ export function useEarthquakeParams(defaultDays = 1) {
     });
   }
 
-  function setPagination(offset: number, limit: number) {
-    navigate({
-      to: "/",
-      search: {
-        ...search,
-        offset,
-        limit,
-      },
-      replace: true,
-    });
-  }
-
-  return { setDays, setMinMagnitude, setOrder, setPagination, params };
+  return {
+    setDays,
+    setMinMagnitude,
+    setOrder,
+    params,
+  };
 }
