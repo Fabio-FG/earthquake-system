@@ -1,6 +1,6 @@
 # Realtime Quake
 
-> An app to check realtime earthquake that are happening all over the world!
+An app to check realtime earthquake that are happening all over the world!
 
 ### Pre-requirements
 
@@ -25,7 +25,7 @@ npm run dev
 
 ```
 
-## 📸 Screenshots
+## Screenshots
 
 Realtime Quake App
 ![App Screenshot](screenshots/realtimequake-print1.png)
