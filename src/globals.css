@@ -15,7 +15,6 @@ body {
 @layer components {
   .range-thumb-style {
     @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
-    /* `appearance-none` é crucial para remover os estilos padrão do navegador. */
   }
 
   /* Chrome, Safari, Edge */

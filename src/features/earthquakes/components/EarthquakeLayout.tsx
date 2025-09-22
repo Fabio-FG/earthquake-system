@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDisplayView } from "../../stores/ui";
+
 import EarthquakeList from "./EarthquakeList";
 import EarthquakeMap from "./EarthquakeMap";
+import { useDisplayView } from "../../../stores/ui";
 
 export default function EarthquakeLayout() {
   const [isMobile, setIsMobile] = useState(false);

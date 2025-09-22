@@ -1,19 +1,23 @@
 import { WiEarthquake, WiTime1 } from "react-icons/wi";
-import { Card } from "../../components/Card";
+
 
 import { useEffect, useState } from "react";
-import OrderFilter, { type OrderString } from "../../components/OrderFilter";
-import Range, { type RangeLevel } from "../../components/Range";
-import SortFilter from "../../components/SortFilter";
-import SystemMessage from "../../components/SystemError";
-import { formatLocation } from "../../helpers/formatLocation.helper";
-import { formatTime } from "../../helpers/formatTime.helper";
-import { useDisplayView } from "../../stores/ui";
-import { cn } from "../../utils/cn";
-import { useEarthquakeParams } from "./hooks/useEarthquakeParams";
-import useEarthquakes from "./hooks/useEarthquakes";
-import { useEarthquakeStore } from "./stores/earthquake.store";
-import type { EarthquakeFeature } from "./types";
+import type { OrderString } from "../../../components/OrderFilter";
+import { useEarthquakeParams } from "../hooks/useEarthquakeParams";
+import { useDisplayView } from "../../../stores/ui";
+import useEarthquakes from "../hooks/useEarthquakes";
+import { useEarthquakeStore } from "../stores/earthquake.store";
+import type { EarthquakeFeature } from "../types";
+import type { RangeLevel } from "../../../components/Range";
+import SystemMessage from "../../../components/SystemError";
+import SortFilter from "../../../components/SortFilter";
+import Range from "../../../components/Range";
+import OrderFilter from "../../../components/OrderFilter";
+import { Card } from "../../../components/Card";
+import { cn } from "../../../utils/cn";
+import { formatLocation } from "../../../utils/formatLocation";
+import { formatTime } from "../../../utils/formatTime";
+
 
 const dateSortOptions = [
   { label: "Last day", value: 1 },

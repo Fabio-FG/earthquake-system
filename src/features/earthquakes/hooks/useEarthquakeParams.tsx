@@ -1,6 +1,6 @@
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { getDateRange } from "../../../helpers/setRange.helper";
+import { getDateRange } from "../../../utils/setRange";
 
 export function useEarthquakeParams(defaultDays = 1) {
   const search = useSearch({ from: "/" });

@@ -1,5 +1,6 @@
 import { WiEarthquake } from "react-icons/wi";
-import { cn } from "../../utils/cn";
+import { cn } from "../../../utils/cn";
+
 
 const quakeMagnitudes = [
   { label: "3.0+", value: 3 },

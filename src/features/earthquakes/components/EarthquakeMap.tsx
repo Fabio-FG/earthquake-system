@@ -8,18 +8,20 @@ import {
   useMap,
   ZoomControl,
 } from "react-leaflet";
-import createEarthquakeIcon from "../../assets/icons/earthquake.icon";
-import { formatTime } from "../../helpers/formatTime.helper";
-import { cn } from "../../utils/cn";
-import { useEarthquakeParams } from "./hooks/useEarthquakeParams";
-import useEarthquakes from "./hooks/useEarthquakes";
-import { useEarthquakeStore } from "./stores/earthquake.store";
-import type { EarthquakeFeature } from "./types";
+
 const { BaseLayer } = LayersControl;
 
 import EarthquakeMagDisplay from "./EarthquakeMagDisplay";
 import { QuakeRegionMenu } from "./EarthquakeRegionMenu";
-import SystemMessage from "../../components/SystemError";
+import { useEarthquakeStore } from "../stores/earthquake.store";
+import { useEarthquakeParams } from "../hooks/useEarthquakeParams";
+import useEarthquakes from "../hooks/useEarthquakes";
+import type { EarthquakeFeature } from "../types";
+import SystemMessage from "../../../components/SystemError";
+import createEarthquakeIcon from "../../../assets/icons/earthquake.icon";
+import { cn } from "../../../utils/cn";
+import { formatTime } from "../../../utils/formatTime";
+
 
 function MapController() {
   const { selectedEarthquake } = useEarthquakeStore();

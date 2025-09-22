@@ -1,7 +1,8 @@
 import { useMap } from "react-leaflet";
-import { QuakeRegions } from "./EarthquakeRegions";
+
 import { useState } from "react";
 import { FaGlobeAfrica } from "react-icons/fa";
+import { QuakeRegions } from "../constants/EarthquakeRegions";
 
 export function QuakeRegionMenu() {
   const map = useMap();
