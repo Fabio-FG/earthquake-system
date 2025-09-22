@@ -18,13 +18,30 @@ body {
     /* `appearance-none` é crucial para remover os estilos padrão do navegador. */
   }
 
-  /* Estilos específicos do Chrome, Safari, Edge */
+  /* Chrome, Safari, Edge */
   .range-thumb-style::-webkit-slider-thumb {
     @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
   }
 
-  /* Estilos específicos do Firefox */
+  /* Firefox */
   .range-thumb-style::-moz-range-thumb {
     @apply appearance-none h-4 w-4 rounded-full bg-teal-500 cursor-pointer;
+  }
+
+  .leaflet-popup-content p {
+    margin: 0 !important;
+    line-height: 1.3;
+  }
+
+  .custom-popup p {
+    margin-top: 0;
+  }
+
+  .custom-popup .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+  }
+
+  .custom-popup .leaflet-popup-tip {
+    display: none;
   }
 }
