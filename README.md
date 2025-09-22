@@ -69,10 +69,22 @@ Realtime Quake App
 - **Axios**
 - **Leaflet** / **Leaflet-React**
 
+### Deployment
+- **Cloudflare pages**
+
 
 ## Demo
 
-🔗 **[Demo](link-para-demo)**
+🔗 **[Demo](https://earthquake-system.pages.dev/)**
+
+
+## Design Decisions
+- Used a restricted color palette that I thought would look clean, modern and minimalist.
+- Responsive first.
+
+**color palette**
+- **main colour**: #160f2e;
+- **main text colour**: #00bba7
 
 
 ## Challenges
@@ -80,8 +92,12 @@ Realtime Quake App
 - Component renderization hierarchy;
 - Map constraints (zoom causing header to disappear, out of bounds handling)
 
+## Limitations
+- Using Leaflet.js does not allow for 3D rendering. Mapbox would be fitting for this but due to time constraint I opted to use Leaflet.
+- Pagination constraints would conflict between the List component and the Map component. Therefore, this feature was put on the Backlog for future improvements.
 
-## Backlog
+
+## Backlog (Future Improvements)
 - [ ] Add unit tests (e.g: Jest)
 - [ ] Add Components such as Pagination to the Earthquake list and Drawer to improve UX when selecting a Marker.
 - [ ] Refactor the renderization hierarchy
