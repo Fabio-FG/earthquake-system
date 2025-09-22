@@ -1,10 +1,10 @@
 import { CiViewList } from "react-icons/ci";
-import { FaGlobeAsia } from "react-icons/fa";
+import { FaGithub, FaGlobeAsia } from "react-icons/fa";
 import { useDisplayView } from "../stores/ui";
 import { WiEarthquake } from "react-icons/wi";
 
 export default function MobileHeader() {
-  const { toggleListView, toggleMapView } = useDisplayView();
+  const { toggleListView, toggleMapView, mapView, listView } = useDisplayView();
 
   return (
     <div className="md:hidden">
@@ -21,8 +21,14 @@ export default function MobileHeader() {
           </p>
         </div>
         <div className="flex flex-row gap-4 ml-auto">
-          <CiViewList size={24} onClick={toggleListView} />
-          <FaGlobeAsia size={24} onClick={toggleMapView} />
+          {mapView && <CiViewList size={24} onClick={toggleListView} />}
+          {listView && <FaGlobeAsia size={24} onClick={toggleMapView} />}
+          <a
+            href="https://github.com/Fabio-FG/earthquake-system"
+            target="_blank"
+          >
+            <FaGithub size={24} />
+          </a>
         </div>
       </div>
     </div>

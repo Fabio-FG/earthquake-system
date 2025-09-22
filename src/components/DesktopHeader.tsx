@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CiViewList } from "react-icons/ci";
-import { FaGlobeAsia } from "react-icons/fa";
+import { FaGithub, FaGlobeAsia } from "react-icons/fa";
 import { useDisplayView } from "../stores/ui";
 import { WiEarthquake } from "react-icons/wi";
 
@@ -22,18 +22,24 @@ export default function DesktopHeader() {
         <nav className="gap-10 flex ml-6"></nav>
         <div className="gap-6 flex mr-4">
           <button
-            onClick={toggleMapView}
-            className="hover:text-teal-500 transition-colors p-1"
-            aria-label="Toggle map view"
-          >
-            <FaGlobeAsia size={20} />
-          </button>
-          <button
             onClick={toggleListView}
             className="hover:text-teal-500 transition-colors p-1"
             aria-label="Toggle list view"
           >
             <CiViewList size={20} />
+          </button>
+
+          <button
+            onClick={toggleMapView}
+            className="hover:text-teal-500 transition-colors p-1"
+            aria-label="Toggle map view"
+          >
+            <a
+              href="https://github.com/Fabio-FG/earthquake-system"
+              target="_blank"
+            >
+              <FaGithub size={20} />
+            </a>
           </button>
         </div>
       </div>
