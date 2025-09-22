@@ -163,7 +163,7 @@ export default function EarthquakeMap() {
               >
                 <Popup
                   className={cn("custom-popup leaflet-popup-content")}
-                  closeButton={false}
+                  closeButton={true}
                   autoPan={true}
                   keepInView={true}
                 >
