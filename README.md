@@ -13,6 +13,9 @@ An app to check realtime earthquakes that are happening all over the world!
 # Clone the repo
 git clone https://github.com/Fabio-FG/earthquake-system.git
 
+# Go to the folder
+cd earthquake-system
+
 # Install dependencies
 npm install
 
