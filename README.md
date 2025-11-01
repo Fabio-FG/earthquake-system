@@ -2,6 +2,16 @@
 
 An app to check realtime earthquakes that are happening all over the world!
 
+### Deployment
+
+## Demo (Cloudflare hosted)
+
+🔗 **[Demo](https://earthquake-system.pages.dev/)**
+
+## Download and test via Docker
+
+🐳 **[DockerHub link](https://hub.docker.com/r/fabiofg/earthquake-system)**
+
 ### Pre-requirements
 
 - Node.js (v20 ou superior)
@@ -32,12 +42,7 @@ npm run dev
 Realtime Quake App
 ![App Screenshot](screenshots/realtimequake-print1.png)
 
-
-
-
 https://github.com/user-attachments/assets/add6ecc8-987c-4bdf-8371-39e6660c80c2
-
-
 
 <details>
 <summary>More screenshots</summary>
@@ -59,67 +64,54 @@ https://github.com/user-attachments/assets/add6ecc8-987c-4bdf-8371-39e6660c80c2
 - Map layers: Choose different map layers.
 - Map regions: Focus on specific regions.
 
-
 ## Tech stack
 
 ### Frontend
+
 - **React**
 - **TypeScript**
 - **Vite**
 
 ### Styling
-- **Tailwind CSS** 
+
+- **Tailwind CSS**
 - **React-icons**
 
 ### Libraries
-- **Tanstack Query** 
-- **Tanstack Router** 
+
+- **Tanstack Query**
+- **Tanstack Router**
 - **Zustand**
 - **Zod**
 - **Axios**
 - **Leaflet** / **Leaflet-React**
 
-### Deployment
-- **Cloudflare pages**
-
-
-## Demo
-
-🔗 **[Demo](https://earthquake-system.pages.dev/)**
-
-
-## Download and test via Docker
-
-🐳 **[DockerHub link](https://hub.docker.com/r/fabiofg/earthquake-system)**
-
-
-
-
 ## Design Decisions
+
 - Used a restricted color palette that I thought would look clean, modern and minimalist.
 - Responsive first.
 
 **color palette**
+
 - **main colour**: ![#160f2e](https://placehold.co/15x15/160f2e/160f2e.png) `#160f2e`
 - **main text colour**: ![#00bba7](https://placehold.co/15x15/00bba7/00bba7.png) `#00bba7`
 
-
-
 ## Challenges
+
 - Handling big data sets;
 - Component renderization hierarchy;
 - Map constraints (zoom causing header to disappear, out of bounds handling)
 
 ## Limitations
+
 - Using Leaflet.js does not allow for 3D rendering. Mapbox would be fitting for this but due to time constraint I opted to use Leaflet.
 - Pagination constraints would conflict between the List component and the Map component. Therefore, this feature was put on the Backlog for future improvements.
 
-
 ## Backlog (Future Improvements)
+
 - [ ] Add unit tests (e.g: Jest)
 - [ ] Add Components such as Pagination to the Earthquake list and Drawer to improve UX when selecting a Marker.
 - [ ] Refactor the renderization hierarchy
-
 
 ### Documentation and sources
 
@@ -129,4 +121,3 @@ https://github.com/user-attachments/assets/add6ecc8-987c-4bdf-8371-39e6660c80c2
 - https://www.mapping101.com/skills/leaflet-zoompan
 - https://tailwindcss.com/
 - https://openmaptiles.org/styles/
-
