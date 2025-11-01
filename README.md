@@ -1,3 +1,5 @@
+<img width="754" height="87" alt="image" src="https://github.com/user-attachments/assets/510418cf-84ab-495c-97ab-12c712d1583c" />
+
 # Realtime Quake
 
 An app to check realtime earthquakes that are happening all over the world!
@@ -5,6 +7,10 @@ An app to check realtime earthquakes that are happening all over the world!
 ### Deployment
 
 ## Demo (Cloudflare hosted)
+
+
+
+
 
 🔗 **[Demo](https://earthquake-system.pages.dev/)**
 
