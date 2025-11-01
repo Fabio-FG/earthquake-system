@@ -1,23 +1,21 @@
 import { WiEarthquake, WiTime1 } from "react-icons/wi";
 
-
 import { useEffect, useState } from "react";
-import type { OrderString } from "../../../components/OrderFilter";
-import { useEarthquakeParams } from "../hooks/useEarthquakeParams";
-import { useDisplayView } from "../../../stores/ui";
-import useEarthquakes from "../hooks/useEarthquakes";
-import { useEarthquakeStore } from "../stores/earthquake.store";
-import type { EarthquakeFeature } from "../types";
-import type { RangeLevel } from "../../../components/Range";
-import SystemMessage from "../../../components/SystemError";
-import SortFilter from "../../../components/SortFilter";
-import Range from "../../../components/Range";
-import OrderFilter from "../../../components/OrderFilter";
 import { Card } from "../../../components/Card";
+import type { OrderString } from "../../../components/OrderFilter";
+import OrderFilter from "../../../components/OrderFilter";
+import type { RangeLevel } from "../../../components/Range";
+import Range from "../../../components/Range";
+import SortFilter from "../../../components/SortFilter";
+import SystemMessage from "../../../components/SystemError";
+import { useDisplayView } from "../../../stores/ui";
 import { cn } from "../../../utils/cn";
 import { formatLocation } from "../../../utils/formatLocation";
 import { formatTime } from "../../../utils/formatTime";
-
+import { useEarthquakeParams } from "../hooks/useEarthquakeParams";
+import useEarthquakes from "../hooks/useEarthquakes";
+import { useEarthquakeStore } from "../stores/earthquake.store";
+import type { EarthquakeFeature } from "../types";
 
 const dateSortOptions = [
   { label: "Last day", value: 1 },
@@ -57,6 +55,12 @@ export default function EarthquakeList() {
   }, []);
 
   function handleSelectQuake(quake: EarthquakeFeature) {
+    if (selectedEarthquake) {
+      setSelectedEarthquake(null);
+
+      return;
+    }
+
     setSelectedEarthquake(quake);
     if (isMobile) {
       toggleMapView();

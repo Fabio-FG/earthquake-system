@@ -22,12 +22,15 @@ import createEarthquakeIcon from "../../../assets/icons/earthquake.icon";
 import { cn } from "../../../utils/cn";
 import { formatTime } from "../../../utils/formatTime";
 
-
 function MapController() {
   const { selectedEarthquake } = useEarthquakeStore();
   const map = useMap();
 
   useEffect(() => {
+    if (selectedEarthquake === null) {
+      map.setZoom(4);
+    }
+
     if (selectedEarthquake) {
       const [lon, lat] = selectedEarthquake.geometry.coordinates;
 
@@ -49,6 +52,10 @@ export default function EarthquakeMap() {
 
   function handleQuake(quake: EarthquakeFeature) {
     setSelectedEarthquake(quake);
+  }
+
+  function onCloseMarker() {
+    setSelectedEarthquake(null);
   }
 
   const [center] = useState<[number, number]>([29.636, 129.59]);
@@ -137,6 +144,7 @@ export default function EarthquakeMap() {
                 )}
                 eventHandlers={{
                   click: () => handleQuake(quake),
+                  popupclose: () => onCloseMarker(),
                 }}
               >
                 <Popup

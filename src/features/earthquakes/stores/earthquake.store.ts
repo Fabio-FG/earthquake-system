@@ -6,7 +6,7 @@ type InitialState = {
 };
 
 type StoreActions = {
-  setSelectedEarthquake: (quake: EarthquakeFeature) => void;
+  setSelectedEarthquake: (quake: EarthquakeFeature | null) => void;
 };
 
 const initialState: InitialState = {
