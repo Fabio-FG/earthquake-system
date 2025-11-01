@@ -20,7 +20,7 @@ export default function SortFilter({ sortOptions, onChange }: SortProps) {
   return (
     <div className="flex flex-row gap-4 justify-center mt-4 flex-wrap h-auto">
       {sortOptions.map((option, idx) => {
-        const isSelected = duration === option.value;
+        const isSelected = Math.round(duration) === option.value;
 
         return (
           <p
