@@ -88,6 +88,13 @@ https://github.com/user-attachments/assets/add6ecc8-987c-4bdf-8371-39e6660c80c2
 🔗 **[Demo](https://earthquake-system.pages.dev/)**
 
 
+## Download and test via Docker
+
+🐳 **[DockerHub link](https://hub.docker.com/r/fabiofg/earthquake-system)**
+
+
+
+
 ## Design Decisions
 - Used a restricted color palette that I thought would look clean, modern and minimalist.
 - Responsive first.
