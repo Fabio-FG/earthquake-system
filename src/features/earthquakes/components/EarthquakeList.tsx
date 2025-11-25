@@ -111,7 +111,7 @@ export default function EarthquakeList() {
                 />
 
                 <p className={isSelected ? "text-white" : "text-teal-500"}>
-                  {quake.properties.mag}
+                  {quake.properties.mag?.toFixed(2)}
                 </p>
               </div>
               <div className="flex flex-col p-1 h-auto items-start flex-1">

@@ -47,7 +47,8 @@ export default function Range({
   return (
     <div className="relative mb-6">
       <label htmlFor="labels-range-input" className="flex gap-2">
-        Magnitude: <p className="text-teal-500">{`Level ${levels[currentIndex].value}`}</p>
+        Magnitude:{" "}
+        <p className="text-teal-500">{`Level ${levels[currentIndex].value}`}</p>
       </label>
 
       <input
@@ -57,7 +58,14 @@ export default function Range({
         min={minValue}
         max={maxValue}
         onChange={handleRangeChange}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-main range-thumb-style"
+        className="w-full h-2 rounded-lg appearance-none cursor-pointer range-thumb-style"
+        style={{
+          background: `linear-gradient(to right, 
+            #14b8a6 0%, 
+            #14b8a6 ${((currentIndex - minValue) / (maxValue - minValue)) * 100}%, 
+            #1a1a1a ${((currentIndex - minValue) / (maxValue - minValue)) * 100}%, 
+            #1a1a1a 100%)`,
+        }}
       />
 
       <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">
