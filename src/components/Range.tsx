@@ -32,6 +32,8 @@ export default function Range({
 
   const [currentIndex, setCurrentIndex] = useState(getInitialIndex);
 
+  console.log({ currentIndex });
+
   function handleRangeChange(event: React.ChangeEvent<HTMLInputElement>) {
     const newIndex = Number(event.target.value);
     setCurrentIndex(newIndex);
@@ -44,7 +46,9 @@ export default function Range({
 
   return (
     <div className="relative mb-6">
-      <label htmlFor="labels-range-input">Magnitude</label>
+      <label htmlFor="labels-range-input" className="flex gap-2">
+        Magnitude: <p className="text-teal-500">{`Level ${levels[currentIndex].value}`}</p>
+      </label>
 
       <input
         id="labels-range-input"

@@ -28,7 +28,7 @@ function MapController() {
 
   useEffect(() => {
     if (selectedEarthquake === null) {
-      map.setZoom(4);
+      map.setZoom(2);
     }
 
     if (selectedEarthquake) {

@@ -1,7 +1,6 @@
 import { WiEarthquake } from "react-icons/wi";
 import { cn } from "../../../utils/cn";
 
-
 const quakeMagnitudes = [
   { label: "3.0+", value: 3 },
   { label: "4.0+", value: 4 },
@@ -9,7 +8,6 @@ const quakeMagnitudes = [
   { label: "6.0+", value: 6 },
   { label: "7.0+", value: 7 },
 ];
-
 
 const magnitudeColors: Record<number, string> = {
   3: "w-2 h-2 bg-green-600 border-green-300",
@@ -22,7 +20,10 @@ const magnitudeColors: Record<number, string> = {
 export default function EarthquakeMagDisplay() {
   return (
     <div className="absolute bottom-35 right-5 bg-white p-2 rounded-lg shadow-md z-[1000] flex flex-col">
-      <p className="mb-2 text-center font-light text-main">Magnitude levels</p>
+      <p className="text-center font-light text-main">Magnitude levels</p>
+      <p className="text-center text-tiny font-light text-teal-500 italic mb-2 ">
+        According to Richter scale (ML)
+      </p>
       <div className="flex flex-row gap-4">
         {quakeMagnitudes.map((quake) => (
           <div className="flex flex-col gap-2">
