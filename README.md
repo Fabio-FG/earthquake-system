@@ -6,13 +6,12 @@ An app to check realtime earthquakes that are happening all over the world!
 
 ### Deployment
 
-## Demo (Cloudflare hosted)
+## Demo
 
+🔗 **[Demo - Cloudflare](https://earthquake-system.pages.dev/)**
 
+🔗 **[Demo - Netlify](https://earthquake-system.netlify.app/)**
 
-
-
-🔗 **[Demo](https://earthquake-system.pages.dev/)**
 
 ## Download and test via Docker
 
